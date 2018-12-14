@@ -32,7 +32,7 @@ class OrderController @Inject()
         val userOpt = userService.getUser(order.customerId)
         userOpt match {
           case Some(user) => {
-            val products: List[Product] = order.productIds.flatMap(f => productService.getById(f))
+            val products: List[Product] = productService.getRange(order.productIds)
             val orderTotal = products.map(_.price).sum
             Ok(Json.toJson(OrderResponse(id, user, products, orderTotal)))
           }

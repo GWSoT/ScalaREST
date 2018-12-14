@@ -10,5 +10,5 @@ class ProductService @Inject() (dbContext: ProductDatabase) {
   val productRepository: ProductRepository = new ProductRepository(dbContext)
   def getAllProducts: Set[Product] = productRepository.getAll
   def getById(id: Long): Option[Product] = productRepository.getById(id)
-  def getRange(ids: List[Long]): Set[Product] = ???
+  def getRange(ids: List[Int]): List[Product] = ids.flatMap(f => dbContext.getById(f))
 }

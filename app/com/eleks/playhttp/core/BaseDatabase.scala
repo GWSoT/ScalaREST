@@ -2,6 +2,9 @@ package com.eleks.playhttp.core
 
 import java.util.concurrent.locks.{Lock, ReentrantLock}
 
+import javax.inject.Singleton
+
+@Singleton
 trait BaseDatabase[T <: BaseEntity] {
   var dbSet: Set[T]
   private[this] val lock :Lock = new ReentrantLock()
