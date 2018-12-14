@@ -1,3 +1,6 @@
 # Routings
-GET    /users/:id      com.eleks.playhttp.Controller.getUser(id: Long)
-POST   /users          com.eleks.playhttp.Controller.saveUser
+GET    /users/:id      com.eleks.playhttp.controllers.Controller.getUser(id: Long)
+POST   /users          com.eleks.playhttp.controllers.Controller.saveUser
+GET     /products       com.eleks.playhttp.controllers.ProductController.getAllProducts
+GET     /products/:id   com.eleks.playhttp.controllers.ProductController.getProductById(id: Long)
+GET     /orders/:id     com.eleks.playhttp.controllers.OrderController.getOrdersById(id: Long)
